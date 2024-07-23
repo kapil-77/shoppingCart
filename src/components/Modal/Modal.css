@@ -1,0 +1,65 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.336);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: rgb(46, 45, 45);
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 450px;
+  width: 100%;
+  position: relative;
+}
+
+.modal img {
+  max-width: 100%;
+  height: auto;
+  /* margin-bottom: 20px; */
+}
+
+.modal-comments h3 {
+  color: rgb(218, 153, 55);
+}
+
+.modal-comments li {
+  color: rgb(204, 195, 181);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-actions input {
+  padding: 8px;
+}
+
+.modal-actions button {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.modal-actions button:hover {
+  background-color: rgb(117, 105, 108);
+}
+
+.product_delete {
+  background-color: rgba(243, 37, 37, 0.815);
+}
+
+.add_comment {
+  background-color: rgba(93, 231, 51, 0.753);
+}
+
+.modal_close {
+  background-color: rgba(232, 235, 34, 0.719);
+}

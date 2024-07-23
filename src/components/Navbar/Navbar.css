@@ -1,0 +1,40 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 10px 20px;
+  background-color: #333;
+}
+
+.navbar-logo a {
+  color: rgb(234, 239, 243);
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.navbar-right span {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+  margin: 1rem;
+}
+
+.navbar button {
+  padding: 5px;
+  cursor: pointer;
+  background-color: white;
+  color: #3473bb;
+  border: none;
+  border-radius: 5px;
+}
+
+.navbar button:hover {
+  /* text-decoration: underline; */
+  background-color: rgb(189, 184, 194);
+}
