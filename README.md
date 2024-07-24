@@ -25,7 +25,6 @@ This project is a React-based e-commerce application that showcases a list of pr
 1. Clone the repository:
    ```sh
    git clone https://github.com/your-username/react-ecommerce-app.git
-d`
 
 2. Navigate to the project directory:
    cd react-ecommerce-app
