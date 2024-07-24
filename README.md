@@ -43,6 +43,8 @@ This project is a React-based e-commerce application that showcases a list of pr
 
 ### User Authentication
 - **Signup**: Users can create an account by providing their details on the signup page.
+  ![image](https://github.com/user-attachments/assets/9a7eee01-b28e-4207-93e9-38adf0e0c1ea)
+
 - **Login**: Users can log in using their credentials.
 
 ### Product Listing
