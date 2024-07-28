@@ -25,7 +25,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "gh-pages -d build -r https://github.com/kapil-77/shoppingCart"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
