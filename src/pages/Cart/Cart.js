@@ -59,6 +59,21 @@ const Cart = ({ isOpen, toggleCart }) => {
           ))}
         </ul>
       )}
+      <div className="buy-items">
+        <div className="total-price">
+          Total - $
+          {Math.round(
+            cart.reduce(
+              (accumulator, currentItem) =>
+                accumulator + currentItem.quantity * currentItem.price,
+              0
+            )
+          )}
+        </div>
+        <div className="buy">
+          <button className="button">Buy</button>
+        </div>
+      </div>
     </div>
   )
 }

@@ -29,21 +29,16 @@ function App() {
     <Provider store={store}>
       <Router>
         <div className="App">
-          {isAuthenticated && <Navbar onLogout={handleLogout} />}
+          <Navbar isAuthenticated={isAuthenticated} onLogout={handleLogout} />
           <Routes>
             <Route path="/signup" element={<Signup />} />
             <Route
               path="/login"
               element={<Login onAuthSuccess={handleAuthSuccess} />}
             />
-            {isAuthenticated ? (
-              <>
-                <Route path="/home" element={<Home />} />
-                <Route path="/cart" element={<Cart />} />
-              </>
-            ) : (
-              <Route path="*" element={<Navigate to="/signup" />} />
-            )}
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
         </div>
       </Router>

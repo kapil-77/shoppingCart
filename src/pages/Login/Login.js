@@ -28,7 +28,7 @@ const Login = ({ onAuthSuccess }) => {
 
         setTimeout(() => {
           onAuthSuccess()
-          navigate('/home')
+          navigate('/')
         }, 2000)
       }
       console.log('Login successful:', response)

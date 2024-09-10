@@ -87,3 +87,20 @@ h4,
 .cart .remove-cartItem:hover {
   background-color: rgb(133, 35, 32);
 }
+
+.buy-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-price {
+  color: #d1bb41;
+  margin: 10px;
+}
+
+.cart .button {
+  background-color: rgb(14, 170, 14);
+  color: #f7f0f0;
+  padding: 8px;
+}

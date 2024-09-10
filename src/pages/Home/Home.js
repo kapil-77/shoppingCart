@@ -9,7 +9,6 @@ import Modal from '../../components/Modal/Modal'
 import './Home.css'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/actions'
-import Search from '../../components/Search/Search'
 import Categories from '../../components/Categories/Categories'
 
 const Card = React.lazy(() => import('../../components/Card/Card'))
@@ -23,7 +22,6 @@ const Home = () => {
   const [itemsPerPage] = useState(4)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState('')
-  const [searchProduct, setSearchProduct] = useState('')
 
   const dispatch = useDispatch()
 
@@ -59,13 +57,6 @@ const Home = () => {
   const totalPages = Math.ceil(products.length / itemsPerPage)
   console.log(totalPages)
 
-  useEffect(() => {
-    const results = products.filter((product) =>
-      product.title.toLowerCase().includes(searchProduct.toLowerCase())
-    )
-    setFilteredProducts(results)
-  }, [searchProduct, products])
-
   const handleCategoryChange = async (category) => {
     setSelectedCategory(category)
     if (category) {
@@ -79,10 +70,6 @@ const Home = () => {
       const productsData = await fetchProducts()
       setProducts(productsData)
     }
-  }
-
-  const handleSearch = (input) => {
-    setSearchProduct(input)
   }
 
   const handleCardClick = (product) => {
@@ -108,7 +95,6 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <Search onSearch={handleSearch} />
       <Categories
         categories={categories}
         onSelectCategory={handleCategoryChange}
