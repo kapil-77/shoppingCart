@@ -31,11 +31,11 @@ function App() {
         <div className="App">
           <Navbar isAuthenticated={isAuthenticated} onLogout={handleLogout} />
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route
               path="/login"
               element={<Login onAuthSuccess={handleAuthSuccess} />}
             />
-            <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/signup" element={<Signup />} />
           </Routes>
