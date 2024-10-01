@@ -4,8 +4,11 @@ import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import './Login.css'
+import { assets } from '../../assets/assets'
 
-const Login = ({ onAuthSuccess }) => {
+const Login = ({ onAuthSuccess, setShowLogin }) => {
+  const [currentState, setCurrentState] = useState('Sign up')
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -40,10 +43,28 @@ const Login = ({ onAuthSuccess }) => {
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
+      <form onSubmit={handleSubmit} className="login-popup">
+        <div className="login-popup-title">
+          <h2>{currentState}</h2>
+          <img
+            onClick={() => setShowLogin(false)}
+            src={assets.cross_icon}
+            alt=""
+          />
+        </div>
+        <div className="form-inputs">
+          {currentState === 'Login' ? (
+            <></>
+          ) : (
+            <input
+              type="text"
+              value={name}
+              placeholder="Your name"
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          )}
 
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
           <input
             type="email"
             value={email}
@@ -51,8 +72,7 @@ const Login = ({ onAuthSuccess }) => {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-        </div>
-        <div className="form-group">
+
           <input
             type="password"
             value={password}
@@ -62,8 +82,23 @@ const Login = ({ onAuthSuccess }) => {
           />
         </div>
         <button className="login" type="submit">
-          Login
+          {currentState === 'Sign up' ? 'Create account' : 'Login'}
         </button>
+        <div className="login-popup-condition">
+          <input type="checkbox" required />
+          <p>By continuing, I agree to the terms of use & privacy policy.</p>
+        </div>
+        {currentState === 'Login' ? (
+          <p>
+            Create a new account?{' '}
+            <span onClick={() => setCurrentState('Sign up')}>Click here</span>
+          </p>
+        ) : (
+          <p>
+            Already have an account?{' '}
+            <span onClick={() => setCurrentState('Login')}>Login here</span>
+          </p>
+        )}
       </form>
       {error && <p className="error">{error}</p>}
       <ToastContainer

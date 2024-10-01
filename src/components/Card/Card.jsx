@@ -9,7 +9,7 @@ const Card = ({ product, onClick, onAddToCart }) => {
   const itemInCart = cart.find((item) => item.id === product.id)
 
   return (
-    <div className="card">
+    <div className="card" id="explore-products">
       <img onClick={onClick} src={product.image} alt={product.title} />
 
       <div>
@@ -26,14 +26,16 @@ const Card = ({ product, onClick, onAddToCart }) => {
             </button>
           </div>
         ) : (
-          <button
-            onClick={(e) => {
-              e.stopPropagation()
-              onAddToCart()
-            }}
-          >
-            Add to Cart
-          </button>
+          <div className="add-to-cart">
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                onAddToCart()
+              }}
+            >
+              Add to Cart
+            </button>
+          </div>
         )}
       </div>
     </div>

@@ -10,6 +10,7 @@ import './Home.css'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/actions'
 import Categories from '../../components/Categories/Categories'
+import Header from '../../components/Header/Header'
 
 const Card = React.lazy(() => import('../../components/Card/Card'))
 
@@ -95,6 +96,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
+      <Header />
       <Categories
         categories={categories}
         onSelectCategory={handleCategoryChange}

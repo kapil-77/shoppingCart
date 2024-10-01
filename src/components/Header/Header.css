@@ -1,0 +1,49 @@
+.header {
+  height: 36vw;
+  margin: 90px auto;
+  background: url('/src/assets/banner_header.jpeg') no-repeat;
+  background-size: contain;
+}
+
+.header-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4vw;
+  max-width: 50%;
+  top: 5%;
+  left: 3vw;
+  animation: fadeIn 3s;
+}
+
+.header-contents h2 {
+  font-weight: 500;
+  color: wheat;
+  font-size: max(4.5vw, 22px);
+}
+
+.header-contents button {
+  border: none;
+  color: #747474;
+  font-weight: 500;
+  padding: 10px 20px;
+  background-color: white;
+  font-size: max(1vw, 13px);
+  border-radius: 15px;
+}
+
+@media (max-width: 1050px) {
+  .header-contents {
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 750px) {
+  .header-contents {
+    max-width: 65%;
+  }
+
+  .header-contents button {
+    padding: 2vw 3vw;
+  }
+}
