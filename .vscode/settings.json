@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["toastify"]
+  "cSpell.words": ["toastify"],
+  "git.ignoreLimitWarning": true
 }
