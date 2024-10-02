@@ -1,8 +1,8 @@
 .cart {
   position: absolute;
-  top: 70px;
+  top: 80px;
   right: 1px;
-  width: 300px;
+  width: 400px;
   background: rgb(32, 31, 31);
   border: 1px solid #817b7ba8;
   box-shadow: 0 6px 8px rgba(105, 102, 102, 0.432);
@@ -18,8 +18,10 @@
 .cart-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
   padding: 2px;
-  border-bottom: 1px solid #f5f0f0;
+  border-bottom: 1px solid #f10909;
 }
 
 .cart-header h2,
@@ -33,15 +35,8 @@ h4,
   color: #d1bb41;
 }
 
-.close-button {
-  background: none;
-  border: none;
-  font-size: 16px;
-  font-weight: bolder;
+.cart-header img {
   cursor: pointer;
-  position: absolute;
-  top: 3px;
-  right: 2px;
 }
 
 .cart ul {
@@ -57,8 +52,8 @@ h4,
 }
 
 .cart li img {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 70px;
   margin-right: 1rem;
 }
 
@@ -67,11 +62,12 @@ h4,
 }
 
 .quantity-buttons button {
-  background-color: #d6cbcb;
-  color: #ff0000;
+  background-color: #ddd4d4;
+  color: #bb0707;
   border: none;
-  padding: 5px 6px;
-  margin: 3px 1px;
+  border-radius: 30px;
+  padding: 4px 10px;
+  margin: 4px 1px;
   cursor: pointer;
 }
 
@@ -80,12 +76,14 @@ h4,
 }
 
 .cart .remove-cartItem {
-  background-color: #ff0000;
-  color: beige;
+  background-color: #f11919;
+  color: rgb(253, 253, 251);
+  border-radius: 4px;
+  padding: 6px 14px;
 }
 
 .cart .remove-cartItem:hover {
-  background-color: rgb(133, 35, 32);
+  background-color: rgb(170, 43, 39);
 }
 
 .buy-items {
@@ -99,8 +97,13 @@ h4,
   margin: 10px;
 }
 
-.cart .button {
+.cart .buy button {
   background-color: rgb(14, 170, 14);
-  color: #f7f0f0;
+  border-radius: 4px;
+  color: #fffdfd;
   padding: 8px;
+}
+
+.cart .buy button:hover {
+  background-color: rgb(29, 143, 29);
 }

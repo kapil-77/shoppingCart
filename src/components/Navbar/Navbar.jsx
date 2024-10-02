@@ -6,12 +6,15 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { assets } from '../../assets/assets'
 import './Navbar.css'
 import Cart from '../../pages/Cart/Cart'
+import { useSelector } from 'react-redux'
+import { cartTotalSelector } from '../../redux/cartSelector'
 
 const Navbar = ({ onLogout, setShowLogin }) => {
   const navigate = useNavigate()
 
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [menu, setMenu] = useState('home')
+  const totalAmount = useSelector(cartTotalSelector)
 
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen)
@@ -56,7 +59,7 @@ const Navbar = ({ onLogout, setShowLogin }) => {
           <span className="cart-icon">
             <FontAwesomeIcon icon={faShoppingCart} onClick={toggleCart} />
           </span>
-          <div className="dot"></div>
+          <div className={totalAmount === 0 ? '' : 'dot'}></div>
         </div>
         <button onClick={() => setShowLogin(true)}>Login</button>
       </div>

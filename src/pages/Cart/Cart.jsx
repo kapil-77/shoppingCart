@@ -5,11 +5,18 @@ import {
   increaseQuantity,
   decreaseQuantity,
 } from '../../redux/actions'
+import { assets } from '../../assets/assets'
 import './Cart.css'
+import { cartTotalSelector } from '../../redux/cartSelector'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = ({ isOpen, toggleCart }) => {
   const cart = useSelector((state) => state.cart.cart)
+  const totalAmount = useSelector(cartTotalSelector)
   console.log(cart)
+
+  const navigate = useNavigate()
+
   const dispatch = useDispatch()
 
   const handleRemove = (id) => {
@@ -25,13 +32,17 @@ const Cart = ({ isOpen, toggleCart }) => {
   const handleDecrease = (id) => {
     dispatch(decreaseQuantity(id))
   }
+
+  const handleClick = () => {
+    navigate('/order')
+    toggleCart()
+  }
+
   return (
     <div className={`cart ${isOpen ? 'open' : ''}`}>
       <div className="cart-header">
-        <button className="close-button" onClick={toggleCart}>
-          X
-        </button>
         <h2>Your Cart</h2>
+        <img onClick={toggleCart} src={assets.cross_icon} alt="" />
       </div>
       {cart.length === 0 ? (
         <p>Your cart is empty....</p>
@@ -60,18 +71,11 @@ const Cart = ({ isOpen, toggleCart }) => {
         </ul>
       )}
       <div className="buy-items">
-        <div className="total-price">
-          Total - $
-          {Math.round(
-            cart.reduce(
-              (accumulator, currentItem) =>
-                accumulator + currentItem.quantity * currentItem.price,
-              0
-            )
-          )}
-        </div>
+        <div className="total-price">Total - ${totalAmount}</div>
         <div className="buy">
-          <button className="button">Buy</button>
+          <button onClick={handleClick} className="buy-button">
+            PROCEED TO CHECKOUT
+          </button>
         </div>
       </div>
     </div>
