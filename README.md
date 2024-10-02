@@ -49,17 +49,17 @@ This project is a React-based e-commerce application that showcases a list of pr
 ### User Authentication
 
 - **Signup**: Users can create an account by providing their details on the signup page.
-  ![Signup](image.png)
+  ![Signup](./frontend/images/image.png)
 
 - **Login**: Users can log in using their credentials.
-  ![Login](image-1.png)
+  ![Login](./frontend/images/image-1.png)
 
 ### Product Listing
 
 - The home page displays a list of products fetched from the FakeStore API.
 
 - Products are displayed in a flex layout with pagination controls at the bottom.
-  ![Products](image-2.png)
+  ![Products](./frontend/images/image-2.png)
 
 ### Categories
 
@@ -69,20 +69,20 @@ This project is a React-based e-commerce application that showcases a list of pr
 
 - Clicking on a product opens a modal displaying the product details.
 - The modal includes functionalities of adding comments, deleting product.
-  ![Modal](image-3.png)
+  ![Modal](./frontend/images/image-3.png)
 
 ### Cart System
 
 - Users can add products to their cart through product cards.
 - The cart is managed using Redux, ensuring state persistence across the application.
 - Clicking the cart icon opens a dropdown with the list of added products and options to increase or decrease quantities or remove items.
-  ![Cart](image-4.png)
+  ![Cart](./frontend/images/image-4.png)
 
 ### Checkout Page
 
 - After adding products in the cart, added page to place the order.
 - User will fill his/her details and confirm the order purchase.
-  ![Order Place](image-5.png)
+  ![Order Place](./frontend/images/image-5.png)
 
 ### Responsive Design
 
