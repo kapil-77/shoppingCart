@@ -107,3 +107,9 @@ h4,
 .cart .buy button:hover {
   background-color: rgb(29, 143, 29);
 }
+
+@media (max-width: 425px) {
+  .cart.open {
+    width: 70%;
+  }
+}
